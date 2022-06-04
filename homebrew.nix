@@ -38,6 +38,7 @@
       "gpg-suite"
       "iterm2"
       "logseq"
+      "nextcloud"
       "raycast"
       "sublime-text"
       "visual-studio-code"
