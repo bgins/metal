@@ -7,6 +7,11 @@ in {
 
   programs.home-manager.enable = true;
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "/opt/homebrew/bin"
+  ];
+
   home.packages = with pkgs; [
     coreutils
     cmake
@@ -29,9 +34,6 @@ in {
     # Databases
     sqlite
 
-    # Cloud
-    # aws
-
     # Fonts
     fira-code
     nerdfonts
@@ -41,9 +43,6 @@ in {
     stack
 
     # Rust
-    # cargo
-    # clippy
-    # rustc
     rustup
 
     # Build
