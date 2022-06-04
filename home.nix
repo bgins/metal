@@ -48,9 +48,6 @@ in {
     # Build
     just
 
-    # Image processing
-    # vips
-
     # Web
     nodejs-18_x
     yarn
@@ -117,7 +114,6 @@ in {
           format = "[$user]($style) "; 
           show_always = false;
         };
-        # line_break = { disabled = true; };
         cmd_duration = { disabled = true; };
         nodejs = { disabled = true; };
         package = { disabled = true; };

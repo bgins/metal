@@ -51,14 +51,14 @@
   };
   home-manager.users.brian = import ./home.nix;
 
-  # system = {
-  #   defaults = {
-  #     dock = {
-  #       autohide = true;
-  #       orientation = "bottom";
-  #     };
-  #   };
-  # };
+  system = {
+    defaults = {
+      dock = {
+        autohide = true;
+        orientation = "bottom";
+      };
+    };
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
