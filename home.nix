@@ -73,10 +73,28 @@
          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       '');
     };
+
+    git = {
+      enable = true;
+      userName = "Brian Ginsburg";
+      userEmail = "gins@brianginsburg.com";
+
+      extraConfig = {
+        github.user = "bgins";
+        init.defaultBranch = "main";
+      };
+
+      signing = {
+        key = "B7A01B90EB115B2D";
+        signByDefault = true;
+      };
+    };
+
     dircolors = {
       enable = true;
       enableZshIntegration = true;
     };
+
     starship = {
       enable = true;
       enableZshIntegration = true;
