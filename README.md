@@ -3,6 +3,10 @@ Nix configs for macOS
 
 ## Install
 
+### Install Homebrew
+
+Follow instructions from https://brew.sh/. On an M1 mac, Homebrew installs to `/opt/homebrew/`.
+
 ### Install nix (daemon mode): 
 
 ```sh
