@@ -20,10 +20,11 @@ nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 ./result/bin/darwin-installer
 ```
         
-#### Add home-manager channel: 
+#### Add home-manager and unstable channel 
 
 ```sh
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
 nix-channel --update
 ```
 

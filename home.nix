@@ -1,4 +1,9 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+
+let
+  unstable = import <unstable> {};
+in {
 
   programs.home-manager.enable = true;
 
