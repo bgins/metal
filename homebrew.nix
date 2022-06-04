@@ -11,8 +11,6 @@
       noLock = true;
     };
 
-    # brews = [ "nvm" ];
-
     brews = [ 
       "awscli"
       "deno"

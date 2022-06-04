@@ -69,18 +69,11 @@ in {
       };
       sessionVariables = { 
         EDITOR = "vim"; 
-        NVM_DIR = "$HOME/.nvm";
       };
       shellAliases = { 
         ls = "ls --color=always";
         cpwd = "echo pwd | pbcopy";
       };
-       initExtra = (''
-         export NIX_PATH=darwin-config=/Users/brian/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:/Users/brian/.nix-defexpr/channels:/Users/brian/.nix-defexpr/channels
-
-         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      '');
     };
 
     git = {
