@@ -8,6 +8,7 @@
     # docker
     direnv
     git
+    inetutils
     jq
     speedtest-cli
     wget
@@ -45,6 +46,10 @@
 
     # Image processing
     # vips
+
+    # Web
+    nodejs-18_x
+    yarn
   ];
 
   programs = {
