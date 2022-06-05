@@ -19,41 +19,46 @@ in {
     git
     inetutils
     jq
-    speedtest-cli
-    wget
-
-    # Machine
-    ansible
-    # docker
-
-    # Process
     htop
+    nmap
+    speedtest-cli
+    tmux
+    wget
 
     # Filesystem
     fd
     ripgrep
     tree
 
-    # Databases
+    # Database
     sqlite
+
+    # Languages
+    ghc
+    rustup
+    stack
 
     # Fonts
     fira-code
     nerdfonts
 
-    # Haskell
-    ghc
-    stack
-
-    # Rust
-    rustup
-
-    # Build
+    # Build Tools
     just
+
+    # Machines
+    ansible
+    # docker
 
     # Web
     nodejs-18_x
     yarn
+
+    # Audio
+    ffmpeg
+    # zynaddsubfx
+
+    # Visual
+    graphviz
   ];
 
   programs = {
