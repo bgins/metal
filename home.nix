@@ -15,13 +15,16 @@ in {
   home.packages = with pkgs; [
     coreutils
     cmake
-    # docker
     direnv
     git
     inetutils
     jq
     speedtest-cli
     wget
+
+    # Machine
+    ansible
+    # docker
 
     # Process
     htop
@@ -70,6 +73,7 @@ in {
       shellAliases = { 
         ls = "ls --color=always";
         cpwd = "echo pwd | pbcopy";
+        update-servers = "ansible-playbook ~/code/system/servers/update-servers.yml -i ~/code/system/servers/hosts";
       };
     };
 
