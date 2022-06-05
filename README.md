@@ -1,13 +1,14 @@
-# nix-config
-Nix configs for macOS
+# dotfiles
+
+My dotfiles, currently managed by nix.
 
 ## Install
 
-### Install Homebrew
+#### Install Homebrew
 
 Follow instructions from https://brew.sh/. On an M1 mac, Homebrew installs to `/opt/homebrew/`.
 
-### Install nix (daemon mode): 
+#### Install nix (daemon mode): 
 
 ```sh
 sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon
@@ -34,12 +35,12 @@ nix-channel --update
 ln -s ./darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 ```
 
-#### Rebuild
+#### Build
 
 ```sh
 darwin-rebuild switch
 ```
 
-## Making changes
+## Making updates
 
-Make the change, the run `darwin-rebuild switch`.
+Make the update, then run `darwin-rebuild switch`.
