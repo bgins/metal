@@ -1,14 +1,23 @@
-" enable syntax highlighting
-syntax on
-
-set tabstop=4 softtabstop=4 shiftwidth=4
-
-" expand tabs into spaces
-set expandtab
+" use nord colorscheme
+colorscheme nord
 
 " indent when moving to the next line while writing code
 set autoindent
 
-" clipboard
-set clipboard
+" Toggle line numbers between numbers, no numbers and relative numbers
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    elseif(&number == 1)
+        set nonumber
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <silent> <C-n> :call NumberToggle()<cr>
 
+" save cursor line position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif

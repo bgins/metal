@@ -133,6 +133,14 @@ in {
     vim = {
       enable = true;
       extraConfig = builtins.readFile vim/vimrc;
+      plugins = [ pkgs.vimPlugins.vim-colorschemes ];
+      settings = {
+        expandtab = true;
+        shiftwidth = 2;
+        tabstop = 2;
+        undodir = [ "~/.local/share/vim/undodir" ];
+        undofile = true;
+      };
     };
 
   };
