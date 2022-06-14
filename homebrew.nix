@@ -40,6 +40,7 @@
       "gpg-suite"
       "handbrake"
       "iterm2"
+      "libreoffice"
       "logseq"
       "nextcloud"
       "obs"
