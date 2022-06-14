@@ -32,7 +32,7 @@ nix-channel --update
 #### Link Darwin configuration
 
 ```sh
-ln -s ./darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
+ln -s $(pwd)/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 ```
 
 #### Build
