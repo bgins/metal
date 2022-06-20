@@ -20,6 +20,7 @@ in {
     inetutils
     jq
     htop
+    mkcert
     nmap
     speedtest-cli
     tmux
