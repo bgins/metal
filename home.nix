@@ -52,6 +52,7 @@ in {
 
     # Web
     nodejs-18_x
+    nodePackages.http-server
     yarn
 
     # Audio
