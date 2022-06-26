@@ -28,6 +28,7 @@
       "adobe-acrobat-reader"
       "balenaetcher"
       "bettertouchtool"
+      "blackhole-16ch"
       "brave-browser"
       "cleanshot"
       "db-browser-for-sqlite"
