@@ -13,6 +13,7 @@ in {
   ];
 
   home.packages = with pkgs; [
+    btop
     coreutils
     cmake
     direnv
