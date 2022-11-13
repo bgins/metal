@@ -8,6 +8,7 @@ in {
   programs.home-manager.enable = true;
 
   home.sessionPath = [
+    "$HOME/.cargo/bin"
     "$HOME/.local/bin"
     "/opt/homebrew/bin"
   ];
