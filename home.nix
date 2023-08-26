@@ -16,7 +16,6 @@ in {
   home.packages = with pkgs; [
     btop
     coreutils
-    cmake
     direnv
     git
     inetutils
@@ -55,6 +54,7 @@ in {
     # Web
     nodejs-18_x
     nodePackages.http-server
+    w3m
     yarn
 
     # Audio
