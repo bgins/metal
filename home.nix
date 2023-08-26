@@ -84,6 +84,7 @@ in {
         cpwd = "echo pwd | pbcopy";
         update-servers = "ansible-playbook ~/code/system/servers/update-servers.yml -i ~/code/system/servers/hosts";
       };
+      initExtra = (''bindkey -v'');
     };
 
     git = {
