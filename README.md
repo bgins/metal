@@ -41,6 +41,38 @@ ln -s $(pwd)/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 darwin-rebuild switch
 ```
 
-## Making updates
+## Adding software
 
-Make the update, then run `darwin-rebuild switch`.
+Add a package to `home.nix` or `homebrew.nix`, then run `darwin-rebuild switch`
+
+## Updating the system
+
+The following commands update the channels and rebuild the system:
+
+```
+nix-channel --update
+sudo -i nix-channel --update
+darwin-rebuild switch
+```
+
+## Upgrading channels
+
+Channels are updated withs stable releases every six months. They need to be updated for the system, darwin, and home-manager.
+
+For example, updating the channels to 23.05 would include:
+
+```
+sudo -i nix-channel --add https://nixos.org/channels/nixpkgs-23.05-darwin nixpkgs
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+nix-channel --add https://github.com/LnL7/nix-darwin/archive/release-23.05.tar.gz darwin
+```
+
+Make sure to update these all at the same time when a new stable relase arrives.
+
+Then run:
+
+```
+sudo -i nix-channel --update
+nix-channel --update
+darwin-rebuild switch
+```
