@@ -4,8 +4,10 @@
   homebrew = {
     enable = true;
     brewPrefix = "/opt/homebrew/bin";
-    autoUpdate = true;
-    cleanup = "zap";
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+    };
     global = {
       brewfile = true;
       noLock = true;
