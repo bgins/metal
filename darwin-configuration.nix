@@ -18,18 +18,19 @@
 
   nix = {
     package = pkgs.nix;
-    trustedUsers = ["root" "@wheel"];
-    trustedBinaryCaches = [
-      "https://cache.nixos.org"
-      "https://hydra.iohk.io"
-      "https://static-haskell-nix.cachix.org"
-    ];
-
-    binaryCachePublicKeys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-      "static-haskell-nix.cachix.org-1:Q17HawmAwaM1/BfIxaEDKAxwTOyRVhPG5Ji9K3+FvUU="
-    ];
+    settings = {
+      trusted-users = ["root" "@wheel"];
+      trusted-substituters = [
+        "https://cache.nixos.org"
+        "https://hydra.iohk.io"
+        "https://static-haskell-nix.cachix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+        "static-haskell-nix.cachix.org-1:Q17HawmAwaM1/BfIxaEDKAxwTOyRVhPG5Ji9K3+FvUU="
+      ];
+    };
 
     extraOptions = ''
       extra-platforms = x86_64-darwin aarch64-darwin
