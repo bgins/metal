@@ -10,7 +10,7 @@
     };
     global = {
       brewfile = true;
-      noLock = true;
+      lockfiles = false;
     };
 
     brews = [ 
