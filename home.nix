@@ -85,7 +85,10 @@ in {
         cpwd = "echo pwd | pbcopy";
         update-servers = "ansible-playbook ~/code/system/servers/update-servers.yml -i ~/code/system/servers/hosts";
       };
-      initExtra = (''bindkey -v'');
+      initExtra = (''
+        ssh-add --apple-use-keychain ~/.ssh/id_git_signing
+        bindkey -v
+      '');
     };
 
     git = {
@@ -95,11 +98,12 @@ in {
 
       extraConfig = {
         github.user = "bgins";
+        gpg.format = "ssh";
         init.defaultBranch = "main";
       };
 
       signing = {
-        key = "B7A01B90EB115B2D";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO18mEXCXNrqiCIbzSrR2Xfx7+L87oLiOh1jd7MRzG7I git signing key";
         signByDefault = true;
       };
     };
