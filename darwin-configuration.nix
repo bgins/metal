@@ -36,6 +36,15 @@
       extra-platforms = x86_64-darwin aarch64-darwin
       experimental-features = nix-command flakes
     '';
+
+    gc = {
+      interval = {
+        Hour = 4;
+        Minute = 11;
+        Weekday = 6;
+      };
+      options = "--delete-older-than 30d";
+    };
   };
 
   programs = {
