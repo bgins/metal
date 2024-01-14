@@ -85,6 +85,8 @@ in {
         ls = "ls --color=always";
         cpwd = "echo pwd | pbcopy";
         update-servers = "ansible-playbook ~/code/system/servers/update-servers.yml -i ~/code/system/servers/hosts";
+        # c64 disk maintenance utility: https://vice-emu.sourceforge.io/vice_13.html
+        c1541 = "~/code/emulation/vice-arm64-gtk3-3.7.1/bin/c1541";
       };
       initExtra = (''
         ssh-add --apple-use-keychain ~/.ssh/id_git_signing
