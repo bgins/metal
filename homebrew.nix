@@ -26,7 +26,6 @@
 
     taps = [
       "fission-suite/fission"
-      "homebrew/cask"
       "homebrew/cask-versions"
     ];
 
