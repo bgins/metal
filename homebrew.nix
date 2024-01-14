@@ -19,6 +19,8 @@
       "deno"
       "fission-cli" 
       "vips"
+      "wasm-tools"
+      "wasmtime"
     ];
 
     taps = [
