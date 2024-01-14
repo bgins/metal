@@ -21,6 +21,7 @@ in {
     inetutils
     jq
     htop
+    kubo
     mkcert
     nmap
     speedtest-cli
