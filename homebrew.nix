@@ -31,6 +31,7 @@
 
     casks = [
       "adobe-acrobat-reader"
+      "arc"
       "balenaetcher"
       "bettertouchtool"
       "blackhole-16ch"
@@ -42,7 +43,6 @@
       "firefox-developer-edition"
       "figma"
       "gimp"
-      "google-chrome"
       "gpg-suite"
       "handbrake"
       "inkscape"
