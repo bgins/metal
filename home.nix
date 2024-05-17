@@ -88,6 +88,10 @@ in {
         c1541 = "~/code/emulation/vice-arm64-gtk3-3.7.1/bin/c1541";
       };
       initExtra = (''
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
         ssh-add --apple-use-keychain ~/.ssh/id_git_signing
         bindkey -v
       '');
