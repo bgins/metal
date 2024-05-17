@@ -21,7 +21,6 @@
       "sevenzip"
       "vips"
       "wasm-tools"
-      "wasmtime"
     ];
 
     taps = [

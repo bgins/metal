@@ -4,7 +4,6 @@
 let
   unstable = import <unstable> {};
 in {
-
   programs.home-manager.enable = true;
 
   home.sessionPath = [
@@ -15,7 +14,6 @@ in {
 
   home.packages = with pkgs; [
     btop
-    coreutils
     direnv
     git
     inetutils
@@ -48,22 +46,15 @@ in {
     fira-code
     nerdfonts
 
-    # Build Tools
-    just
-
     # Machines
     ansible
-    # docker
 
     # Web
-    nodejs-18_x
-    nodePackages.http-server
     w3m
     yarn
 
     # Audio
     ffmpeg
-    # zynaddsubfx
 
     # Visual
     graphviz
