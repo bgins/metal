@@ -38,6 +38,9 @@ in {
 
     # Languages
     ghc
+    python311
+    python311Packages.pip
+    python311Packages.setuptools
     rustup
     stack
 
