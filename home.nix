@@ -8,6 +8,7 @@ in {
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    # Note: .go must be created manually for now
     "$HOME/.go/bin"
     "$HOME/.local/bin"
     "/opt/homebrew/bin"
