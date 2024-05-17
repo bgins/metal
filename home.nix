@@ -58,6 +58,9 @@ in {
 
     # Visual
     graphviz
+
+    # Documents
+    texliveFull
   ];
 
   programs = {
