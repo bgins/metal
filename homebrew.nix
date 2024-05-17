@@ -18,6 +18,7 @@
       "cmake"
       "deno"
       "fission-cli" 
+      "go"
       "sevenzip"
       "vips"
       "wasm-tools"

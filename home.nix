@@ -8,6 +8,7 @@ in {
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    "$HOME/.go/bin"
     "$HOME/.local/bin"
     "/opt/homebrew/bin"
   ];
@@ -77,6 +78,7 @@ in {
       };
       sessionVariables = { 
         EDITOR = "vim"; 
+        GOPATH = "$HOME/.go";
       };
       shellAliases = { 
         ls = "ls --color=always";
