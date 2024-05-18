@@ -19,10 +19,13 @@
       "deno"
       "fission-cli" 
       "go"
+      "ipfs"
+      "pnpm"
       "pre-commit"
       "sevenzip"
       "vips"
       "wasm-tools"
+      "websocat"
     ];
 
     taps = [
