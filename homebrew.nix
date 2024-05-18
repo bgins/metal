@@ -19,6 +19,7 @@
       "deno"
       "fission-cli" 
       "go"
+      "pre-commit"
       "sevenzip"
       "vips"
       "wasm-tools"
