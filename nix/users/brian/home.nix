@@ -1,101 +1,103 @@
-{ config, pkgs, ... }:
+{ lib, pkgs, ... }: {
+  home = {
+    sessionPath = [
+      "$HOME/.local/bin"
+      "/opt/homebrew/bin"
+      "$HOME/.cargo/bin"
+      "$HOME/.go/bin" # Note: .go must be created manually for now
+      "$HOME/.wasmtime/bin"
+      "/usr/local/go/bin"
+    ];
 
+    packages = with pkgs; [
+      jq
+      starship
+      tmux
 
-let
-  unstable = import <unstable> {};
-in {
-  programs.home-manager.enable = true;
+      btop
+      direnv
+      inetutils
+      jq
+      htop
+      mkcert
+      nmap
+      speedtest-cli
+      tmux
+      wget
 
-  home.sessionPath = [
-    "$HOME/.cargo/bin"
-    # Note: .go must be created manually for now
-    "$HOME/.go/bin"
-    "$HOME/.local/bin"
-    "/opt/homebrew/bin"
-  ];
+      # git
+      git
+      # zsh-forgit
 
-  home.packages = with pkgs; [
-    btop
-    direnv
-    git
-    inetutils
-    jq
-    htop
-    kubo
-    mkcert
-    nmap
-    speedtest-cli
-    tmux
-    wget
+      # Filesystem
+      fd
+      ripgrep
+      tree
 
-    # Filesystem
-    fd
-    ripgrep
-    tree
+      # Database
+      postgresql_16
+      sqlite
 
-    # Database
-    sqlite
+      # Languages
+      python311
+      python311Packages.pip
+      python311Packages.setuptools
+      rustup
 
-    # Languages
-    ghc
-    python311
-    python311Packages.pip
-    python311Packages.setuptools
-    rustup
-    stack
+      # Fonts
+      fira-code
+      nerdfonts
 
-    # Fonts
-    fira-code
-    nerdfonts
+      # Web
+      w3m
 
-    # Machines
-    ansible
+      # Audio
+      ffmpeg
 
-    # Web
-    w3m
-    yarn
+      # Visual
+      graphviz
+    ];
 
-    # Audio
-    ffmpeg
-
-    # Visual
-    graphviz
-
-    # Documents
-    texliveFull
-  ];
+    stateVersion = "24.05";
+  };
 
   programs = {
     direnv.enable = true;
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       oh-my-zsh = {
         enable = true;
         plugins = [
           "ssh-agent"
+          "fzf"
         ];
       };
-      sessionVariables = { 
-        EDITOR = "vim"; 
+      sessionVariables = {
+        EDITOR = "vim";
         GOPATH = "$HOME/.go";
+        WASMTIME_HOME= "$HOME/.wasmtime";
       };
-      shellAliases = { 
+      shellAliases = {
         ls = "ls --color=always";
         cpwd = "echo pwd | pbcopy";
-        update-servers = "ansible-playbook ~/code/system/servers/update-servers.yml -i ~/code/system/servers/hosts";
-        # c64 disk maintenance utility: https://vice-emu.sourceforge.io/vice_13.html
-        c1541 = "~/code/emulation/vice-arm64-gtk3-3.7.1/bin/c1541";
       };
       initExtra = (''
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+        [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
+
         ssh-add --apple-use-keychain ~/.ssh/id_git_signing
         bindkey -v
       '');
+    };
+
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
     };
 
     git = {
@@ -106,6 +108,7 @@ in {
       extraConfig = {
         github.user = "bgins";
         gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         init.defaultBranch = "main";
       };
 
@@ -136,8 +139,8 @@ in {
           ssh_only = true;
           format = "[$hostname]($style):";
         };
-        username = { 
-          format = "[$user]($style) "; 
+        username = {
+          format = "[$user]($style) ";
           show_always = false;
         };
         cmd_duration = { disabled = true; };
@@ -146,7 +149,7 @@ in {
         aws = { disabled = true; };
       };
     };
-    
+
     vim = {
       enable = true;
       extraConfig = builtins.readFile vim/vimrc;
@@ -159,8 +162,5 @@ in {
         undofile = true;
       };
     };
-
   };
-
-  home.stateVersion = "23.05";
 }

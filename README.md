@@ -10,49 +10,29 @@ Follow instructions from https://brew.sh/. On an M1 mac, Homebrew installs to `/
 
 #### Install nix (daemon mode):
 
-```sh
-sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon
-```
-
-#### Install nix-darwin:
+Use the Determinate Systems installer:
 
 ```sh
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
-#### Add home-manager and unstable channel
+See https://victorpierre.dev/blog/declarative-macos-configurations-with-nix/ for more details.
+
+## Apply configuration
+
+Run this command when first applying the configuration:
 
 ```sh
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
-nix-channel --update
+nix run nix-darwin -- switch --flake .
 ```
-
-#### Link Darwin configuration
-
-```sh
-ln -s $(pwd)/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
-```
-
-#### Build
-
-```sh
-darwin-rebuild switch
-```
-
-## Adding software
-
-Add a package to `home.nix` or `homebrew.nix`, then run `darwin-rebuild switch`
 
 ## Updating the system
 
 The following commands update the channels and rebuild the system:
 
-```
-nix-channel --update
-sudo -i nix-channel --update
-darwin-rebuild switch
+```sh
+nix flake update
+darwin-rebuild switch --flake .
 ```
 
 ## Garbage collection
@@ -67,6 +47,8 @@ nix-store --gc
 See https://nixos.org/manual/nix/unstable/package-management/garbage-collection.html for more options.
 
 ## Upgrading channels
+
+TODO: Check on the details of this section. We may update these through code with the shift to flakes.
 
 Channels are updated withs stable releases every six months. They need to be updated for the system, darwin, and home-manager.
 
