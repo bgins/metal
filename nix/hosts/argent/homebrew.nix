@@ -1,71 +1,62 @@
-{ config, lib, pkgs, ...}:
+_:
 
 {
   homebrew = {
-    enable = true;
-    brewPrefix = "/opt/homebrew/bin";
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "zap";
-    };
-    global = {
-      brewfile = true;
-      lockfiles = false;
-    };
+    taps = [
+      "1password/tap"
+      "dopplerhq/cli"
+    ];
 
-    brews = [ 
+    brews = [
       "awscli"
+      "cloudflared"
       "cmake"
       "deno"
-      "fission-cli" 
-      "go"
+      "doppler"
+      "gcc"
+      "gh"
+      "gsed"
       "ipfs"
+      "opentofu"
       "pnpm"
       "pre-commit"
       "sevenzip"
-      "vips"
+      "ripgrep"
       "wasm-tools"
       "websocat"
     ];
 
-    taps = [
-      "fission-suite/fission"
-      "homebrew/cask-versions"
-    ];
-
     casks = [
-      "adobe-acrobat-reader"
+      "1password"
+      "1password-cli"
       "arc"
       "balenaetcher"
       "bettertouchtool"
-      "blackhole-16ch"
       "brave-browser"
       "cleanshot"
       "db-browser-for-sqlite"
       "discord"
+      "docker"
       "firefox"
-      "firefox-developer-edition"
-      "figma"
       "gimp"
       "gpg-suite"
-      "handbrake"
+      "google-chrome"
       "inkscape"
       "insomnia"
       "iterm2"
       "libreoffice"
       "logseq"
       "maccy"
-      "midiview"
-      "nextcloud"
+      "microsoft-edge"
       "obs"
+      "ollama"
+      "pgadmin4"
       "pop"
       "raycast"
-      "steam"
-      "sublime-text"
       "visual-studio-code"
       "vlc"
+      "zed@preview"
       "zoom"
     ];
   };
 }
-
