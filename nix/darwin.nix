@@ -17,4 +17,5 @@ let
 in
 {
   argent = mkDarwin "argent" [ ./hosts/argent/darwin-configuration.nix ];
+  aurum = mkDarwin "aurum" [ ./hosts/aurum/darwin-configuration.nix ];
 }
