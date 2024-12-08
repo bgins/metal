@@ -72,6 +72,7 @@
         plugins = [
           "ssh-agent"
           "fzf"
+          "git"
         ];
       };
       sessionVariables = {
