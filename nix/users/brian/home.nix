@@ -10,33 +10,26 @@
     ];
 
     packages = with pkgs; [
-      jq
-      starship
-      tmux
-
       btop
       direnv
       inetutils
+      fd
+      ffmpeg
+      git
+      graphviz
       jq
-      htop
       mkcert
       nmap
-      speedtest-cli
-      tmux
-      wget
-
-      # git
-      git
-      # zsh-forgit
-
-      # Filesystem
-      fd
-      ripgrep
-      tree
-
-      # Database
       postgresql_16
+      ripgrep
+      speedtest-cli
       sqlite
+      starship
+      tmux
+      tree
+      w3m
+      wget
+      # zsh-forgit
 
       # Languages
       python311
@@ -47,15 +40,6 @@
       # Fonts
       fira-code
       nerdfonts
-
-      # Web
-      w3m
-
-      # Audio
-      ffmpeg
-
-      # Visual
-      graphviz
     ];
 
     stateVersion = "24.05";
