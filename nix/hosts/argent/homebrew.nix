@@ -41,6 +41,7 @@ _:
       "db-browser-for-sqlite"
       "discord"
       "docker"
+      "dotnet-sdk"
       "firefox"
       "gimp"
       "gpg-suite"
