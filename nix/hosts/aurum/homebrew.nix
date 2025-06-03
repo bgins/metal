@@ -53,6 +53,7 @@ _:
       "microsoft-edge"
       "obs"
       "ollama"
+      "orion"
       "pgadmin4"
       "pop"
       "raycast"
