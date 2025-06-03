@@ -43,6 +43,7 @@ _:
       "docker"
       "dotnet-sdk"
       "firefox"
+      "ghostty"
       "gimp"
       "gpg-suite"
       "google-chrome"

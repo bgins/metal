@@ -40,6 +40,7 @@ _:
       "discord"
       "docker"
       "firefox"
+      "ghostty"
       "gimp"
       "gpg-suite"
       "google-chrome"
