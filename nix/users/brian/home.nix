@@ -32,9 +32,6 @@
       # zsh-forgit
 
       # Languages
-      python311
-      python311Packages.pip
-      python311Packages.setuptools
       rustup
 
       # Fonts
