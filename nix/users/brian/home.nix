@@ -36,7 +36,6 @@
 
       # Fonts
       fira-code
-      nerdfonts
     ];
 
     stateVersion = "24.05";
