@@ -33,7 +33,7 @@ _:
       "arc"
       "balenaetcher"
       "bettertouchtool"
-      "blackhole-16ch" # has issues on macOS Sequoia
+      # "blackhole-16ch" # has issues on macOS Sequoia, even uninstalling has issues
       "brave-browser"
       "cleanshot"
       "db-browser-for-sqlite"
