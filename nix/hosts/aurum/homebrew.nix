@@ -67,6 +67,7 @@ _:
       "sublime-text"
       "visual-studio-code"
       "vlc"
+      "wireshark"
       "zed@preview"
       "zoom"
     ];
