@@ -5,9 +5,11 @@ _:
     taps = [
       "1password/tap"
       "dopplerhq/cli"
+      "probe-rs/probe-rs"
     ];
 
     brews = [
+      "arm-none-eabi-gdb"
       "awscli"
       "cloudflared"
       "cmake"
@@ -17,9 +19,12 @@ _:
       "gh"
       "gsed"
       "ipfs"
+      "lsusb"
+      "minicom"
       "opentofu"
       "pnpm"
       "pre-commit"
+      "probe-rs"
       "sevenzip"
       "ripgrep"
       "wasm-tools"
