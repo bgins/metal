@@ -25,6 +25,7 @@
       speedtest-cli
       sqlite
       starship
+      texliveFull
       tmux
       tree
       w3m
