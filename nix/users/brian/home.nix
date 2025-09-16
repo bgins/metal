@@ -75,6 +75,16 @@
 
         ssh-add --apple-use-keychain ~/.ssh/id_git_signing
         bindkey -v
+
+        # Custom git fixup and rebase function
+        # Pass a target hash argument
+        gcrbas() {
+          if [[ -z "$1" ]]; then
+            echo "Usage: gcrbas <commit-hash>"
+            return 1
+          fi
+          git commit --fixup "$1" && git rebase -i --autosquash "$1~1"
+        }
       '');
     };
 
