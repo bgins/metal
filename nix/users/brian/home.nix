@@ -60,6 +60,7 @@
         EDITOR = "vim";
         GOPATH = "$HOME/.go";
         WASMTIME_HOME= "$HOME/.wasmtime";
+        DOTNET_ROOT= "/usr/local/share/dotnet";
       };
       shellAliases = {
         ls = "ls --color=always";
