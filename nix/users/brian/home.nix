@@ -103,6 +103,9 @@
         gpg.format = "ssh";
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         init.defaultBranch = "main";
+        pull.rebase = true;
+        rebase.autostash = true;
+        rerere.enabled = true;
       };
 
       signing = {
