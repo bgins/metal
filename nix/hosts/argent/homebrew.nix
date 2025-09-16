@@ -25,8 +25,10 @@ _:
       "python@3.11"
       "sevenzip"
       "ripgrep"
+      "swiftformat"
       "wasm-tools"
       "websocat"
+      "xcode-build-server"
     ];
 
     casks = [
